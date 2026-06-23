@@ -12,8 +12,8 @@
       imports = [
         # Include the results of the hardware scan.
         self.nixosModules.TitanicHardware
-        ./disko.nix
-        ./preservation.nix
+        self.nixosModules.TitanicDisko
+        self.nixosModules.TitanicPreservation
       ];
 
       # Bootloader.
