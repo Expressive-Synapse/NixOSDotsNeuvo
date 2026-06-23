@@ -16,13 +16,20 @@
       self.nixosModules.NixLabPreservation
     ];
 
-  # Use the GRUB 2 boot loader.
+  # Use systemd boot (EFI only)
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use the GRUB 2 boot loader (Both EFI and legacy boot supported).
   boot.loader.grub.enable = true;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+
+  # This is for GRUB in EFI mode
+  boot.loader.grub.efiSupport = true;
+  boot.loader.grub.device = "nodev";
+
+  # This is for GRUB for legacy boot
+  # boot.loader.grub.version = 2;
+  # boot.loader.grub.device = "/dev/sda";
 
   networking.hostName = "NixLab"; # Define your hostname.
 
