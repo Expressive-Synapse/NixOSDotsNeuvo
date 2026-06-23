@@ -1,75 +1,113 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.NixLabDisko =
+  flake.nixosModules.TitanicDisko =
     { ... }:
 
     {
-      fileSystems."/nix".neededForBoot = true;
-      disko.devices.nodev = {
-      	"/" = {
-      	  fsType = "tmpfs";
-      	  mountOptions = [
-      	    "size=25%"
-      	    "mode=755"
-      	  ];
-      	};
-      };
-      
-      disko.devices.disk.main = {
-        device = "dev/sda";
-        type = "disk";
-        
-        content.type = "gpt";
-        
-        content.partitions.boot = {
-          name = "ESP";
-          size = "1M";
-          type = "EF02";
-        };
-        
-        content.partitions.esp = {
-          name = "ESP";
-          size = "1G";
-          type = "EF00";
-          
-          content = {
-            type = "filesystem";
-            format = "vfat";
-            mountpoint = "/boot";
-          };
-        };
-        
-        content.partition.swap = {
-          size = "4G";
-          
-          content = {
-            type = "swap";
-            resumeDevice = true;
-          };
-        };
-        
-        content.partitions.root = {
-          name = "root";
-          size = "100%";
-          
-          content = {
-            type = "btrfs";
-            extraArgs = ["-f"];
-            
-            subvolumes = {
-              "/persist" = {
-                mountOptions = ["subvol=persist" "noatime"];
-                mountpoint = "/persist";
+      disko.devices = {
+        disk = {
+          disk0 = {
+            device = "/dev/sda";
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                boot = {
+                  name = "boot";
+                  size = "1M";
+                  type = "EF02";
+                };
+                esp = {
+                  name = "ESP";
+                  size = "512M";
+                  type = "EF00";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                    mountOptions = [
+                      "defaults"
+                    ];
+                  };
+                };
+                main = {
+                  size = "100%";
+                  content = {
+                    type = "luks";
+                    name = "main";
+                    passwordFile = "/tmp/secret.key";
+                    settings.allowDiscards = true;
+                    content = {
+                      type = "btrfs";
+                      extraArgs = [ "-f" ];
+                      subvolumes = {
+                        "/root" = {
+                          mountpoint = "/";
+                        };
+                        "/persist" = {
+                          mountOptions = [
+                            "subvol=persist"
+                            "noatime"
+                          ];
+                          mountpoint = "/persist";
+                        };
+                        "/nix" = {
+                          mountOptions = [
+                            "subvol=nix"
+                            "noatime"
+                          ];
+                          mountpoint = "/nix";
+                        };
+                        "/swap" = {
+                          mountpoint = "/.swapvol";
+                          swap.swapfile.size = "64G";
+                        };
+                      };
+                    };
+                  };
+                };
               };
-              
-              "/nix" = {
-                mountOptions = ["subvol=nix" "noatime"];
-                mountpoint = "/nix";
+            };
+          };
+          disk1 = {
+            device = "/dev/nvme0n1";
+            type = "disk";
+            content = {
+              type = "gpt";
+              partitions = {
+                main = {
+                  size = "100%";
+                  content = {
+                    type = "luks";
+                    name = "crypted";
+                    passwordFile = "/tmp/secret.key";
+                    settings.allowDiscards = true;
+                    content = {
+                      type = "btrfs";
+                      extraArgs = [ "-f" ];
+                      subvolumes = {
+                        "Games" = {
+                          mountOptions = [
+                            "subvol=games"
+                            "noatime"
+                          ];
+                          mountpoint = "/home/expressive-synapse/Games";
+                        };
+                        "Bottles" = {
+                          mountOptions = [
+                            "subvol=bottles"
+                            "noatime"
+                          ];
+                          mountpoint = "/home/expressive-synapse/Bottles";
+                        };
+                      };
+                    };
+                  };
+                };
               };
             };
           };
         };
       };
-      
     };
 }

@@ -1,31 +1,48 @@
 { self, inputs, ... }: {
-  flake.nixosModules.NixLabPreservation = {
-  
-    boot.tmp.cleanOnBoot = true;
-  
+  flake.nixosModules.TitanicPreservation = {
     preservation = {
       enable = true;
 
       preserveAt."/persist" = {
-        files = [ 
-          { file = "/etc/NixLab"; inInitrd = true;}
-        ];
+        files = [ ];
         directories = [
-          #"/etc/nixos"
-          "/var/lib/systemd/timers"
-          "/var/lib/nixos"
-          "/var/log"
-          "/tmp"
+          "/etc/nixos"
         ];
 
         users.expressive-synapse = {
           files = [ ];
           directories = [
             ".ssh"
+            ".zen"
+            "Pictures"
+            "Documents"
+            "Videos"
+            "Zomboid"
 
             "Downloads/torrents"
 
+            ".config/waypaper"
+            ".config/Proton/VPN"
+            ".config/inkscape"
+            ".config/blender"
+            ".config/discord"
+            ".config/Vencord"
+            ".config/dosbox"
+            ".config/retroarch"
+            ".config/VintagestoryData"
+            ".config/VirtualBox"
+            ".config/qBittorrent"
+
+            ".local/share/atuin"
             ".local/share/keyrings"
+            ".local/share/Steam"
+            ".local/share/PrismLauncher"
+            ".local/share/Hytale"
+            ".local/share/Hytale-launcher"
+            ".local/share/FoundryVTT"
+            ".local/share/qBittorrent"
+            ".local/share/bottles"
+            ".local/share/lutris"
           ];
         };
       };
