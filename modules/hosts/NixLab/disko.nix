@@ -5,71 +5,79 @@
 
     {
       fileSystems."/nix".neededForBoot = true;
+      fileSystems."/persist".neededForBoot = true;
+
       disko.devices.nodev = {
-      	"/" = {
-      	  fsType = "tmpfs";
-      	  mountOptions = [
-      	    "size=25%"
-      	    "mode=755"
-      	  ];
-      	};
+        "/" = {
+          fsType = "tmpfs";
+          mountOptions = [
+            "size=25%"
+            "mode=755"
+          ];
+        };
       };
-      
+
       disko.devices.disk.main = {
         device = "/dev/sda";
         type = "disk";
-        
+
         content.type = "gpt";
-        
+
         content.partitions.boot = {
-          name = "ESP";
+          name = "boot";
           size = "1M";
           type = "EF02";
         };
-        
+
         content.partitions.esp = {
           name = "ESP";
           size = "1G";
           type = "EF00";
-          
+
           content = {
             type = "filesystem";
             format = "vfat";
             mountpoint = "/boot";
           };
         };
-        
+
         content.partitions.swap = {
           size = "4G";
-          
+
           content = {
             type = "swap";
             resumeDevice = true;
           };
         };
-        
+
         content.partitions.root = {
           name = "root";
           size = "100%";
-          
+
           content = {
             type = "btrfs";
-            extraArgs = ["-f"];
-            
+            extraArgs = [ "-f" ];
+
             subvolumes = {
               "/persist" = {
-                mountOptions = ["subvol=persist" "noatime"];
+                mountOptions = [
+                  "subvol=persist"
+                  "noatime"
+                ];
                 mountpoint = "/persist";
               };
-              
+
               "/nix" = {
-                mountOptions = ["subvol=nix" "noatime"];
+                mountOptions = [
+                  "subvol=nix"
+                  "noatime"
+                ];
                 mountpoint = "/nix";
               };
             };
           };
         };
       };
-      
+
     };
 }
