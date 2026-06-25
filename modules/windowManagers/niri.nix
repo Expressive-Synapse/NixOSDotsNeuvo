@@ -5,7 +5,7 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
-        inputs.keyboard = {
+        input.keyboard = {
           xkb.layout = "us,ua";
         };
 
