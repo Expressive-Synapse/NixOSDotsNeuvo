@@ -3,6 +3,7 @@
   perSystem = { pkgs, lib, ... }: {
 
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
+      inherit pkgs;
       settings = {
         inputs.keyboard = {
           xkb.layout = "us,ua";
