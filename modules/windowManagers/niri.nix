@@ -9,41 +9,41 @@
           xkb.layout = "us,ua";
         };
 
-        prefer-no-csd = null;
+        prefer-no-csd = _: { };
 
         layout.gaps = 5;
 
-        hotkey-overlay.skip-at-startup = null;
+        hotkey-overlay.skip-at-startup = _: { };
         binds = {
           "Mod+Return" = {
             hotkey-overlay-title = "Open a Terminal";
             spawn-sh = lib.getExe pkgs.ghostty;
           };
 
-          "Mod+Q".close-window = null;
-          "Mod+F".maximize-column = null;
-          "Mod+Shift+F".fullscreen-window = null;
-          "Mod+V".toggle-window-floating = null;
+          "Mod+Q".close-window = _: { };
+          "Mod+F".maximize-column = _: { };
+          "Mod+Shift+F".fullscreen-window = _: { };
+          "Mod+V".toggle-window-floating = _: { };
 
-          "Mod+H".focus-column-left = null;
-          "Mod+L".focus-column-right = null;
-          "Mod+K".focus-window-up = null;
-          "Mod+J".focus-window-down = null;
+          "Mod+H".focus-column-left = _: { };
+          "Mod+L".focus-column-right = _: { };
+          "Mod+K".focus-window-up = _: { };
+          "Mod+J".focus-window-down = _: { };
 
-          "Mod+Left".focus-column-left = null;
-          "Mod+Right".focus-column-right = null;
-          "Mod+Up".focus-window-up = null;
-          "Mod+Down".focus-window-down = null;
+          "Mod+Left".focus-column-left = _: { };
+          "Mod+Right".focus-column-right = _: { };
+          "Mod+Up".focus-window-up = _: { };
+          "Mod+Down".focus-window-down = _: { };
 
-          "Mod+Shift+H".move-column-left = null;
-          "Mod+Shift+L".move-column-right = null;
-          "Mod+Shift+K".move-window-up = null;
-          "Mod+Shift+J".move-window-down = null;
+          "Mod+Shift+H".move-column-left = _: { };
+          "Mod+Shift+L".move-column-right = _: { };
+          "Mod+Shift+K".move-window-up = _: { };
+          "Mod+Shift+J".move-window-down = _: { };
 
-          "Mod+Shift+Left".move-column-left = null;
-          "Mod+Shift+Right".move-column-right = null;
-          "Mod+Shift+Up".move-window-up = null;
-          "Mod+Shift+Down".move-window-down = null;
+          "Mod+Shift+Left".move-column-left = _: { };
+          "Mod+Shift+Right".move-column-right = _: { };
+          "Mod+Shift+Up".move-window-up = _: { };
+          "Mod+Shift+Down".move-window-down = _: { };
 
           "Mod+1".focus-workspace = "w0";
           "Mod+2".focus-workspace = "w1";
