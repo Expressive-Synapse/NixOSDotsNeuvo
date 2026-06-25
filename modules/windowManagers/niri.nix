@@ -2,7 +2,7 @@
 
   perSystem = { pkgs, lib, ... }: {
 
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.warp {
+    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       settings = {
         inputs.keyboard = {
           xkb.layout = "us,ua";
