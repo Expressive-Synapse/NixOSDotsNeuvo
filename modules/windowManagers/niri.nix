@@ -15,10 +15,7 @@
 
         hotkey-overlay.skip-at-startup = _: { };
         binds = {
-          "Mod+Return" = {
-            hotkey-overlay-title = "Open a Terminal";
-            spawn-sh = lib.getExe pkgs.ghostty;
-          };
+          "Mod+Return".spawn-sh = lib.getExe pkgs.ghostty;
 
           "Mod+Q".close-window = _: { };
           "Mod+F".maximize-column = _: { };
