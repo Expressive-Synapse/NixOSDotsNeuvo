@@ -16,6 +16,7 @@
         self.nixosModules.NixLabPreservation
 
         self.nixosModules.niri
+        self.nixosModules.ly
         self.nixosModules.git
         self.nixosModules.helix
       ];
