@@ -2,6 +2,13 @@
 
   perSystem = { pkgs, lib, ... }: {
 
+    flake.nixosModules.niri = { pkgs, lib, ... }: {
+      programs.niri = {
+        enable = true;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
+      };
+    };
+
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
