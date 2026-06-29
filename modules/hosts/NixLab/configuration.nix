@@ -80,6 +80,7 @@
 
       programs.xwayland.enable = true;
 
+      hardware.graphics.enable = true;
       #################################################
       #               Audio Services                  #
       #################################################
