@@ -29,7 +29,6 @@
       #                 Packages                      #
       #################################################
       environment.systemPackages = with pkgs; [
-        wayland
       ];
       #################################################
       #                 Bootloader                    #
@@ -103,6 +102,13 @@
         extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
       };
 
+      #################################################
+      #                  VirtualBox                   #
+      #################################################
+      virtualisation.virtualbox.guest = {
+        enable = true;
+        dragAndDrop = true;
+      };
       #################################################
       #                     NixOS                     #
       #################################################
