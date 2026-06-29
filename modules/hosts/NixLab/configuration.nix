@@ -9,6 +9,10 @@
       ...
     }:
     {
+
+      #################################################
+      #                   Modules                     #
+      #################################################
       imports = [
         # Include the results of the hardware scan.
         self.nixosModules.NixLabHardware
@@ -19,6 +23,13 @@
         self.nixosModules.ly
         self.nixosModules.git
         self.nixosModules.helix
+      ];
+
+      #################################################
+      #                 Packages                      #
+      #################################################
+      environment.systemPackages = with pkgs; [
+        wayland
       ];
       #################################################
       #                 Bootloader                    #
