@@ -100,7 +100,10 @@
       users.users.expressive-synapse = {
         isNormalUser = true;
         initialPassword = "open";
-        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [
+          "wheel"
+          "seat"
+        ]; # Enable ‘sudo’ for the user.
       };
 
       #################################################
