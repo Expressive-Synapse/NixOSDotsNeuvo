@@ -126,6 +126,35 @@
         LC_TELEPHONE = "en_US.UTF-8";
         LC_TIME = "en_US.UTF-8";
       };
+      #################################################
+      #              Display Services                 #
+      #################################################
+
+      # Enable the X11 windowing system.
+      services.xserver.enable = true;
+
+      # Configure keymap in X11
+      # services.xserver.xkb.layout = "us";
+      # services.xserver.xkb.options = "eurosign:e,caps:escape";
+
+      # Enable CUPS to print documents.
+      # services.printing.enable = true;
+
+      programs.xwayland.enable = true;
+
+      hardware.graphics.enable = true;
+      #################################################
+      #               Audio Services                  #
+      #################################################
+      # Enable sound.
+      # services.pulseaudio.enable = true;
+      # OR
+      services.pipewire = {
+        enable = true;
+        wireplumber.enable = true;
+        pulse.enable = true;
+      };
+
       ###################################################
       #                     Users                       #
       ###################################################
