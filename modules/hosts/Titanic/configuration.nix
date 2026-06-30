@@ -109,6 +109,10 @@
 
       sops.defaultSopsFile = ../../secrets/secrets.yaml;
       sops.defaultSopsFormat = "yaml";
+
+      networking.firewall.enable = true;
+      networking.firewall.allowedTCPPorts = [ 30000 ]; # FoundryVTT
+      networking.firewall.allowedUDPPorts = [ 30000 ];
       ###################################################
       #                    Location                     #
       ###################################################
