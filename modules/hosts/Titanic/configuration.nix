@@ -105,7 +105,10 @@
       ###################################################
 
       security.polkit.enable = true;
+      services.gnome.gnome-keyring.enable = true;
 
+      sops.defaultSopsFile = ../../secrets/secrets.yaml;
+      sops.defaultSopsFormat = "yaml";
       ###################################################
       #                    Location                     #
       ###################################################
@@ -214,12 +217,6 @@
           };
         }
       ];
-
-      ###################################################
-      #                      SOPS                       #
-      ###################################################
-      sops.defaultSopsFile = ../../secrets/secrets.yaml;
-      sops.defaultSopsFormat = "yaml";
 
       ###################################################
       #                     NixOS                       #
