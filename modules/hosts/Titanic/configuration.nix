@@ -205,6 +205,7 @@
         xkb.variant = "";
       };
       services.xremap.enable = true;
+      services.xremap.withWlroots = true;
       services.xremap.config.modmap = [
         {
           name = "cool CapsLock";
