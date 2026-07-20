@@ -19,10 +19,8 @@
         self.nixosModules.NixLabDisko
         self.nixosModules.NixLabPreservation
 
-        self.nixosModules.niri
-        self.nixosModules.ly
-        self.nixosModules.git
-        self.nixosModules.helix
+        self.nixosModules.desktop
+        self.nixosModules.tools
       ];
 
       #################################################

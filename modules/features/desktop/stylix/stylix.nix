@@ -8,9 +8,6 @@
     }:
     {
 
-      imports = [
-        inputs.stylix.nixosModules.stylix
-      ];
       stylix.enable = true;
 
       stylix.base16Scheme = "./themes/Catppuccin Mocha.yaml";
