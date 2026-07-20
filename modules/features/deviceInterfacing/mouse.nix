@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.deviceMouse = { ... }: {
+  flake.nixosModules.devices = { ... }: {
 
     hardware.maccel = {
       enable = true;

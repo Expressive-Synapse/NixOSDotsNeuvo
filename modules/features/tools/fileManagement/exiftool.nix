@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.exiftool = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.exiftool
     ];

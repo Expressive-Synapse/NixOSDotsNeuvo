@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.steam = { pkgs, ... }: {
+  flake.nixosModules.gaming = { pkgs, ... }: {
 
     nixpkgs.config.packageOverrides = pkgs: {
       steam = pkgs.steam.override {

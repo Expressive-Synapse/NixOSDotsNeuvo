@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.fd = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.fd
     ];

@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.podman = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       podman-compose
       dive

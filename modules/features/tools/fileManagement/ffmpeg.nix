@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.ffmpeg = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.ffmpeg
     ];

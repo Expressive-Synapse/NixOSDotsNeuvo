@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.cdemu = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.cdemu-daemon
     ];

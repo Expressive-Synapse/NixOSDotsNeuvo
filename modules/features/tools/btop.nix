@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.btop = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.btop
     ];

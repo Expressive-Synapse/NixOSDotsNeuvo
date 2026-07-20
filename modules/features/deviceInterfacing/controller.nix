@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.deviceController = { pkgs, ... }: {
+  flake.nixosModules.devices = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.linuxConsoleTools
     ];

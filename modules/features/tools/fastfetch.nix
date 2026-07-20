@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.fastfetch = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.fastfetch
     ];

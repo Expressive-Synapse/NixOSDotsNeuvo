@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.lutris = { pkgs, ... }: {
+  flake.nixosModules.gaming = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.lutris
     ];

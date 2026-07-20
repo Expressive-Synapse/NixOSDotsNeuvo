@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.gameModding = { pkgs, ... }: {
+  flake.nixosModules.gaming = { pkgs, ... }: {
 
     home.packages = [
       pkgs.r2modman

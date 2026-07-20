@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.deviceKeyboard = { pkgs, ... }: {
+  flake.nixosModules.devices = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.via
     ];

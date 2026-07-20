@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.yazi = { ... }: {
+  flake.nixosModules.tools = { ... }: {
 
     programs.yazi.enable = true;
 

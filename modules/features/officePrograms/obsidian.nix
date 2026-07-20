@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.obsidian = { pkgs, ... }: {
+  flake.nixosModules.office = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.obsidian
     ];

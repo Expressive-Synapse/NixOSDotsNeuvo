@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.deviceMTPFS = { pkgs, ... }: {
+  flake.nixosModules.devices = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.jmtpfs
       pkgs.simple-mtpfs

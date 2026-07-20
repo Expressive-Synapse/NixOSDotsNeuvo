@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.retroarch = { pkgs, ... }: {
+  flake.nixosModules.gaming = { pkgs, ... }: {
 
     environment.systemPackages = with pkgs; [
       (retroarch.withCores (

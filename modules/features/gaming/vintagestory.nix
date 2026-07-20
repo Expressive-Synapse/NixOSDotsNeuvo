@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.vintagestory = { pkgs, ... }: {
+  flake.nixosModules.gaming = { pkgs, ... }: {
 
     home.packages = [
       pkgs.vintagestory

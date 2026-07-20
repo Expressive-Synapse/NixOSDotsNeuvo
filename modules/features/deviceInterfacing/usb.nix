@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.deviceUSB = { pkgs, ... }: {
+  flake.nixosModules.devices = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.usbutils
     ];

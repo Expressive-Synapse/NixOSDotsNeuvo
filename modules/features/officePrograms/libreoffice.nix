@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.libreoffice = { pkgs, ... }: {
+  flake.nixosModules.office = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.libreoffice
     ];

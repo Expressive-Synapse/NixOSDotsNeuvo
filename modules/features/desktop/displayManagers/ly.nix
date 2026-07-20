@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
 
-  flake.nixosModules.ly = { ... }: {
+  flake.nixosModules.desktop = { ... }: {
     services.displayManager.ly = {
       enable = true;
     };

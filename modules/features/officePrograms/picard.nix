@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.picard = { pkgs, ... }: {
+  flake.nixosModules.office = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.picard
     ];

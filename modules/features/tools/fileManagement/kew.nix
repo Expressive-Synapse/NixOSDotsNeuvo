@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
-  flake.nixosModules.yt-dlp = { pkgs, ... }: {
+  flake.nixosModules.tools = { pkgs, ... }: {
     environment.systemPackages = [
-      pkgs.yt-dlp
+      pkgs.kew
     ];
   };
 }

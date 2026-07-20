@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.minecraft = { pkgs, ... }: {
+  flake.nixosModules.gaming = { pkgs, ... }: {
 
     home.packages = [
       pkgs.prismlauncher

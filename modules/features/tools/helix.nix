@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.nixosModules.helix = { pkgs, lib, ... }: {
+  flake.nixosModules.tools = { pkgs, lib, ... }: {
     environment.systemPackages = [
       pkgs.nil
 
