@@ -14,6 +14,29 @@
         self.nixosModules.TitanicHardware
         self.nixosModules.TitanicDisko
         self.nixosModules.TitanicPreservation
+
+        self.nixosModules.desktop
+        self.nixosModules.devices
+        self.nixosModules.gaming
+        self.nixosModules.office
+        self.nixosModules.tools
+
+        self.nixosModules.bash
+        self.nixosModules.starship
+
+        self.nixosModules.javascript
+
+        self.nixosModules.clamav
+        self.nixosModules.discord
+        self.nixosModules.dosbox
+        self.nixosModules.keypass
+        self.nixosModules.ns-usbloader
+        self.nixosModules.protonvpn
+        self.nixosModules.qbittorrent
+        self.nixosModules.syncthing
+        self.nixosModules.virtualbox
+        self.nixosModules.wine
+        self.nixosModules.zen-browser
       ];
 
       # Bootloader.

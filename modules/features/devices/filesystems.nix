@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.filesystems = { pkgs, ... }: {
+  flake.nixosModules.devices = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.exfat
       pkgs.ntfs3g
